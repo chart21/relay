@@ -7,6 +7,28 @@ open port besides SSH.
 
 [![Relay demo](docs/media/relay-demo.gif)](docs/media/relay-demo.mp4)
 
+## Why Relay, and not just the official apps
+
+The vendors' mobile apps each cover one tool and one login. Relay is built for people who run **many agents on
+several accounts at once** on their own machine:
+
+- **All accounts and tools in one place, with a usage overview.** Every Claude Code login (c1, c2, c3, ...), Codex and
+  Antigravity sessions in one list, with the 5-hour and weekly limits of every account side by side. New sessions can
+  go to whichever account still has quota (`auto`), so spare plans get used before the main one.
+- **An assistant that keeps track of all of them, hands-free.** "Hey Jarvis" is an on-device wake word. Jarvis knows
+  every session on every account: what is running, what waits for you, what a session said last. It sends your
+  instructions to the right session, starts or resumes sessions on the right account, reads finished results to you
+  as short summaries, and looks things up on the web. Speech recognition and voice output stay on the phone.
+- **The real CLI, not a remote subset.** Each session is the actual `claude` / `codex` / `agy` TUI running in tmux on
+  your desktop, with your MCP servers, hooks, skills, files and hardware. Everything you type in the chat goes into
+  that TUI, so **every slash command works** (`/model`, `/compact`, `/usage`, `/resume`, `/rewind`, `/mcp`, custom
+  commands and skills), including ones the mobile apps do not offer, and pickers, permission prompts and questions
+  are answered from the live screen panel with real keys.
+- **Self-hosted, nothing in between.** The phone talks to your desktop over your own SSH link (LAN or WireGuard). No
+  relay server, no extra account, no open port besides SSH; transcripts, files and phone-bridge data stay at home.
+- **Built around the desktop's resources.** A RAM monitor shows memory per session and lets you close a session and
+  reopen it later; the share sheet sends photos and files from any app straight into a session.
+
 | Sessions | Chat | Jarvis |
 |---|---|---|
 | ![Sessions](docs/media/overview.png) | ![Chat](docs/media/chat.png) | ![Jarvis](docs/media/jarvis.png) |
@@ -19,7 +41,7 @@ open port besides SSH.
 > risk: the agents are started with **permission prompts bypassed** (see [Security model](#security-model)), so whoever
 > controls your phone's key controls those agents.
 
-## Features
+## All features
 
 - **Session list across accounts**: every agent session of every account (several Claude logins, Codex, agy), live
   state (working, ready, needs input), waiting sessions first, pinning, search, background runs hidden.
