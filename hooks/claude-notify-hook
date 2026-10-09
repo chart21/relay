@@ -1,0 +1,24 @@
+#!/usr/bin/env python3
+"""Claude Code hook (Stop, Notification, UserPromptSubmit, SessionStart, SessionEnd): tell notifyd what happened.
+
+Never blocks or fails Claude: short socket timeout, every error swallowed, always exit 0, nothing on stdout.
+"""
+import json
+import os
+import socket
+import sys
+
+try:
+    data = json.load(sys.stdin)
+    msg = {"type": "hook", "tool": "claude", "event": data.get("hook_event_name"),
+           "session_id": data.get("session_id"), "cwd": data.get("cwd"),
+           "message": data.get("message") or data.get("last_assistant_message") or "", "notification_type": data.get("notification_type"),
+           "transcript_path": data.get("transcript_path")}
+    s = socket.socket(socket.AF_UNIX)
+    s.settimeout(1)
+    s.connect(os.environ.get("NOTIFYD_SOCKET", os.path.expanduser("~/.local/state/notifyd/notifyd.sock")))
+    s.sendall((json.dumps(msg) + "\n").encode())
+    s.close()
+except Exception:
+    pass
+sys.exit(0)

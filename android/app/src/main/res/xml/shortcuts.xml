@@ -1,0 +1,10 @@
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+    <shortcut android:shortcutId="new_chat" android:enabled="true" android:icon="@drawable/ic_shortcut_new"
+        android:shortcutShortLabel="@string/shortcut_new_short" android:shortcutLongLabel="@string/shortcut_new_long">
+        <intent android:action="dev.relay.app.NEW_CHAT" android:targetPackage="dev.relay.app" android:targetClass="dev.relay.app.MainActivity" />
+    </shortcut>
+    <shortcut android:shortcutId="jarvis" android:enabled="true" android:icon="@drawable/ic_shortcut_jarvis"
+        android:shortcutShortLabel="@string/shortcut_jarvis_short" android:shortcutLongLabel="@string/shortcut_jarvis_long">
+        <intent android:action="dev.relay.app.JARVIS" android:targetPackage="dev.relay.app" android:targetClass="dev.relay.app.MainActivity" />
+    </shortcut>
+</shortcuts>

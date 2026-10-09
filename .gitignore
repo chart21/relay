@@ -1,0 +1,37 @@
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+.idea/
+.vscode/
+
+# Android build output and machine-specific files
+android/build/
+android/.gradle/
+android/.kotlin/
+android/app/build/
+local.properties
+*.apk
+*.aab
+*.jks
+*.keystore
+
+# Secrets and personal data: never commit
+*.env
+.env*
+config.yaml
+memory.md
+
+# Wake word models are CC BY-NC-SA 4.0: fetch them with scripts/fetch-wake-models.sh
+android/app/src/main/assets/wake/*.onnx
+
+# Your own Jarvis prompt and vocabulary (the *.example.* files are the shipped defaults)
+router/CLAUDE.md
+router/voice-vocab.txt
+
+# Local agent files
+CLAUDE.md
+AGENTS.md
+.claude/
+!router/.claude/
+.relay-public-export

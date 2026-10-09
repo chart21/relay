@@ -1,0 +1,23 @@
+# Vocabulary for Jarvis's speech recognition (the phone biases recognition towards these terms and fixes known
+# mishearings). One term per line, or "heard => meant" for a correction (case-insensitive, whole words).
+# Session titles and account names are added automatically. Copy to router/voice-vocab.txt (git-ignored) and edit;
+# the phone reloads it on connect, and "Fix recognition" (long-press a reply) appends to it.
+Jarvis
+Relay
+Claude
+Claude Code
+Codex
+Antigravity
+Haiku
+Sonnet
+Opus
+Remote Control
+WireGuard
+tmux
+
+cloud code => Claude Code
+clod code => Claude Code
+cloud => Claude
+c one => c1
+c two => c2
+c three => c3

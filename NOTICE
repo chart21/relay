@@ -1,0 +1,28 @@
+Relay is MIT licensed (see LICENSE). It uses the following third-party parts, each under its own licence.
+
+Android app (android/app/build.gradle.kts)
+  - sshj (com.hierynomus:sshj), Apache-2.0
+  - net.i2p.crypto:eddsa, CC0-1.0
+  - Bouncy Castle (bcprov, bcpkix), MIT-style Bouncy Castle licence
+  - multiplatform-markdown-renderer (com.mikepenz), Apache-2.0
+  - AndroidX / Jetpack Compose / Room / DataStore / Health Connect client, Apache-2.0
+  - kotlinx.coroutines, Apache-2.0
+  - slf4j-android, MIT
+  - ONNX Runtime for Android (com.microsoft.onnxruntime), MIT
+
+Wake word models ("Hey Jarvis") - NOT part of this repository
+  The app listens for the wake word with openWakeWord (https://github.com/dscripka/openWakeWord, code Apache-2.0).
+  Its pre-trained models (melspectrogram.onnx, embedding_model.onnx, hey_jarvis_v0.1.onnx) are licensed
+  CC BY-NC-SA 4.0 (non-commercial, share-alike). They are therefore not shipped here:
+  scripts/fetch-wake-models.sh downloads them from the openWakeWord v0.5.1 release into
+  android/app/src/main/assets/wake/. A build that contains them may only be used non-commercially and must
+  keep this attribution. embedding_model.onnx derives from Google's speech_embedding model.
+
+Gateway (gateway/pyproject.toml)
+  - mcp (Model Context Protocol Python SDK), MIT
+  - PyYAML, MIT
+  - websockets, BSD-3-Clause
+  - faster-whisper (optional, `--extra voice`), MIT
+
+"Claude", "Claude Code", "Codex", "Antigravity" and other product names belong to their owners. Relay is an
+independent project and is not affiliated with or endorsed by them.

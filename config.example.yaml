@@ -1,0 +1,14 @@
+# Copy to ~/.config/notifyd/config.yaml (or let `notifyd setup accounts` write one).
+# Accounts: one entry per agent login. `alias` is what you type in a terminal and what the app shows.
+overview:            # the voice assistant "Jarvis"
+  alias: c1          # which Claude account runs it
+  model: haiku       # newest Haiku; any `claude --model` alias works
+  effort: low        # spoken answers want speed, not deep reasoning ("" = CLI default)
+poll_fallback_s: 15  # slows to 120 s while no phone is connected
+auto_trust: true     # pre-trust launch folders (no trust dialog); see README "Security model"
+accounts:
+  - {alias: c1, tool: claude, label: Claude #1, home: ~/.claude}
+  - {alias: c2, tool: claude, label: Claude #2, home: ~/.claude-c2}   # a second login; run `c2`, then /login once
+  - {alias: x1, tool: codex,  label: Codex,     home: ~/.codex}
+  - {alias: g1, tool: agy,    label: Antigravity}
+  # optional per account: binary: /abs/path/to/claude, env: {KEY: value}, skip_permissions: false

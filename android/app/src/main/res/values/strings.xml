@@ -1,0 +1,7 @@
+<resources>
+    <string name="shortcut_new_short">New chat</string>
+    <string name="shortcut_new_long">Start a new chat</string>
+    <string name="shortcut_jarvis_short">Jarvis</string>
+    <string name="shortcut_jarvis_long">Talk to Jarvis</string>
+    <string name="tile_jarvis">Jarvis</string>
+</resources>
