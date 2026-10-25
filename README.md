@@ -5,9 +5,9 @@ Antigravity (`agy`)** sessions running in tmux, and gives you an Android app to 
 from anywhere. The phone talks to the desktop over **SSH** (LAN or WireGuard). There is no cloud relay, no account, no
 open port besides SSH.
 
-[![Relay demo](docs/media/relay-ad.gif)](docs/media/relay-ad.mp4)
+[![Relay demo](docs/media/relay-ad.gif)](https://chart21.github.io/relay/)
 
-*Click the preview for the full video (2:14, with sound).*
+*Click the preview to watch the full video in your browser (2:14, with sound).*
 
 ## Why Relay, and not just the official apps
 
